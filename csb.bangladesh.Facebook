@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verified Team</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+    font-family:'Hind Siliguri',sans-serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.card{
+    background:rgba(0,0,0,0.7);
+    padding:32px;
+    border-radius:22px;
+    width:100%;
+    max-width:400px;
+    text-align:center;
+    box-shadow:0 20px 45px rgba(0,0,0,0.45);
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(25px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Team Name + Verify */
+.team{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    font-size:26px;
+    font-weight:700;
+    line-height:1;
+}
+
+.verify-circle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:22px;  /* Circle size adjustable */
+    height:22px;
+}
+
+.verify-circle svg{
+    width:22px;
+    height:22px;
+}
+
+.owner{
+    margin-top:6px;
+    font-size:18px;
+    opacity:.9;
+}
+
+p{
+    font-size:14px;
+    line-height:1.7;
+    margin:18px 0;
+}
+
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:13px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    margin:12px 0;
+    transition:.3s;
+}
+
+.btn:hover{transform:scale(1.04)}
+
+.btn svg{width:20px;height:20px;fill:white;}
+
+.btn-telegram{background:#1DA1F2;}
+.btn-facebook{background:#1877F2;}
+.btn-confirm{background:#ffb703;color:black;display:none;}
+.btn-confirm svg{fill:black;}
+.btn-website{background:#00ff99;color:#003322;display:none;}
+.btn-website svg{fill:#003322;}
+
+.note{font-size:13px;opacity:.85;display:none;}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- Team Name + Circle Verify -->
+    <div class="team">
+        CSB~BANGLADESH
+        <span class="verify-circle">
+            <svg viewBox="0 0 24 24" fill="#1DA1F2">
+                <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.66 9.66l-6.36 6.36a.998.998 0 0 1-1.41 0l-3.18-3.18 1.41-1.41 1.77 1.77 4.65-4.65 1.77 1.77z"/>
+            </svg>
+        </span>
+    </div>
+
+    <!-- Your Name -->
+    <div class="owner">DEVELOPER  LM LIMON</div>
+
+    <p>
+        Facebook ফ্রি ফিশিং লিং ক্রিয়েট করুন? 
+        প্রিমিয়াম আপডেট ও গুরুত্বপূর্ণ তথ্য পেতে  
+        প্রথমে আমাদের Telegram গ্রুপে জয়েন করুন।
+        সেটাপ ভিডিও আমাদের ফেসবুক পেজে দেয়া আছে
+    </p>
+
+    <!-- Telegram Button -->
+    <a href="https://t.me/CSB_BANGLADESH22" target="_blank" class="btn btn-telegram" onclick="showConfirm()">
+        <svg viewBox="0 0 24 24"><path d="M22 2L2 11l5 2 2 6 3-4 6 4 4-17z"/></svg>
+        Join Telegram Group
+    </a>
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/share/17w4JTKEdX/" target="_blank" class="btn btn-facebook">
+        <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .1 2 .1v2.3h-1.2c-1.2 0-1.6.7-1.6 1.5V12H16l-.4 3h-2.2v7A10 10 0 0 0 22 12z"/></svg>
+        Visit Facebook Page
+    </a>
+
+    <!-- Note -->
+    <div class="note" id="note">জয়েন করার পর নিচে কনফার্ম করুন</div>
+
+    <!-- Confirm Button -->
+    <div class="btn btn-confirm" id="confirmBtn" onclick="unlockSite()">
+        <svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19l11-11-1.5-1.5z"/></svg>
+        NEXT
+    </div>
+
+    <!-- Website Button -->
+    <a href="https://sp0m.co/" target="_blank" class="btn btn-website" id="websiteBtn">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9h-3.2a15 15 0 0 0-1.4-5A8 8 0 0 1 19.9 11zM12 4c.9 1.3 1.6 3.1 1.9 5H10c.3-1.9 1-3.7 2-5zM4.1 13h3.2c.2 1.8.7 3.6 1.4 5A8 8 0 0 1 4.1 13z"/></svg>
+        Visit Website
+    </a>
+
+</div>
+
+<script>
+function showConfirm(){
+    document.getElementById("confirmBtn").style.display="flex";
+    document.getElementById("note").style.display="block";
+}
+function unlockSite(){
+    localStorage.setItem("siteUnlocked","yes");
+    document.getElementById("websiteBtn").style.display="flex";
+}
+if(localStorage.getItem("siteUnlocked")==="yes"){
+    document.getElementById("websiteBtn").style.display="flex";
+}
+</script>
+
+</body>
+</html>
